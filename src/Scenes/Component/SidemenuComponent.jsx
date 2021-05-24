@@ -3,10 +3,14 @@ import { AiFillLayout } from "react-icons/ai";
 import { RiShieldFlashLine } from "react-icons/ri";
 import { TiThListOutline } from "react-icons/ti";
 import { GrGraphQl } from "react-icons/gr";
-import { RiEnglishInput } from "react-icons/ri";
+import { ImSphere } from "react-icons/im";
 import { Button } from 'react';
 import CardView from '../SubComponent/CardView';
-
+import DuelMapView from '../SubComponent/DuelMapView';
+import MapComponent from '../SubComponent/MapComponent';
+import DrawMapComponent from '../SubComponent/DrawMapComponent';
+import LanguageComponent from '../SubComponent/LanguageComponent';
+import Grid from '@material-ui/core/Grid';
 class SidemenuComponent extends Component {
   constructor(props) {
     super(props)
@@ -22,30 +26,32 @@ class SidemenuComponent extends Component {
   };
   render() {
     return (
-      <div class="sidebar">
-        <div class="sideicon" style={{ marginBottom: '10px' }}>
-          <AiFillLayout />
-        </div>
-        <div class="sideicon" style={{ marginBottom: '10px' }}>
-          <RiShieldFlashLine />
-        </div>
+      <div class="sidebar" >
+        {/* <DuelMapView />
+        <MapComponent />
+        <CardView />
+        <DrawMapComponent />
+        <LanguageComponent /> */}
 
-        <div>
-          {
-            this.state.visible ? <CardView /> :
-              <div class="sideicon" style={{ marginBottom: '10px' }}>
-                <TiThListOutline onClick={this.buttonClick} />
-              </div>
-          }
-        </div>
-
-        <div class="sideicon" style={{ marginBottom: '10px' }}>
-          <GrGraphQl />
-        </div>
-        <div class="sideicon" style={{ marginBottom: '10px', }}>
-          <GrGraphQl />
-        </div>
+        <Grid container spacing={1} direction="column" justify="flex-end">
+          <Grid container   >
+            <DuelMapView />
+          </Grid>
+          <Grid container >
+            <MapComponent />
+          </Grid>
+          <Grid container  >
+            <CardView />
+          </Grid>
+          <Grid container  >
+            <DrawMapComponent />
+          </Grid>
+          <Grid container  >
+            <LanguageComponent />
+          </Grid>
+        </Grid>
       </div>
+
     )
   }
 }
